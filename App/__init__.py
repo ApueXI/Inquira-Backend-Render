@@ -33,7 +33,6 @@ def run_app():
     app.config["JWT_REFRESH_COOKIE_PATH"] = "/api/user/refresh"     # sent only to /api/user/refresh endpoint    
     app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes=15)  # Short lived token to increase security, use to make the users have access to jwt_redquired() API
     app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=3)
-    app.config["JWT_COOKIE_DOMAIN"] = "https://inquira-backend-render.onrender.com"
 
     # flask-mail config
     app.config['MAIL_SERVER'] = 'smtp.gmail.com'
