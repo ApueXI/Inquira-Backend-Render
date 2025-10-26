@@ -1,5 +1,6 @@
 from App import run_app
 from App.database import Base, engine
+import os
 
 RESET = False
 app = run_app()
@@ -12,5 +13,6 @@ if __name__ == "__main__":
     HOST = "0.0.0.0"            # Listen on all available network interfaces
     LOCAL_HOST = "127.0.0.1"    # Local host
     PORT = 5000
+    POST_RENDER = int(os.environ.get("PORT", 5000))
     print(f"Running on host: http://{LOCAL_HOST}:{PORT}")
-    app.run(host=HOST, port=PORT, debug=True)
+    app.run(host=HOST, port=POST_RENDER, debug=True)
